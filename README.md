@@ -1,4 +1,4 @@
-# New Wheels Analysis
+# New-Wheels Analysis
 
 Insights into Car Resale Market: An Analysis of 'New Wheels' Customer Data
 
