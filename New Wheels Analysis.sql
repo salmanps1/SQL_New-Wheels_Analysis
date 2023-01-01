@@ -59,8 +59,6 @@ select quarter_number,avg(datediff(ship_date,order_date)) as avg_time_taken from
 group by quarter_number
 order by avg(datediff(ship_date,order_date)) desc;
 
-
-
 select * from order_t;
 
 ##What is the average rating in each quarter?
@@ -82,7 +80,6 @@ with rating_cte as
     
 ##Are customers getting more dissatisfied over time?
     
-
 with cust_feedback as
 (
 select quarter_number,
@@ -105,14 +102,12 @@ from cust_feedback
 order by 1;
 
 
-
 /*  What is the quarter over quarter % change in revenue? */
 
 with qoq as(
 select quarter_number,sum((quantity*car_price)-discount*(quantity*car_price)) as total_revenue
 from veh_ord_cust_v
 group by 1)
-
 
 select quarter_number,100*(lag(total_revenue) over(order by quarter_number)-total_revenue)/total_revenue as quarter_over_quarter_per_change_in_revenue
 from qoq;
