@@ -9,6 +9,7 @@ order by count(customer_id) desc
 limit  10;
 
 ##Which are the top 5 vehicle makers preferred by the customer.
+
 select vehicle_maker,count(customer_id) as total_customer
 from veh_prod_cust_v
 group by vehicle_maker
